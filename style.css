@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0 15px 0 15px;
+}
+h2{
+    margin: 0;
+}
+h3{
+    margin: 0;
+}
+ul{
+    margin: 0;
+}
+.favorites {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2em;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+
+.favorites_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.city_data {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.weather_data {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
