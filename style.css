@@ -30,7 +30,7 @@ ul{
 
 .current_city_container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-column-gap: 60px;
     align-items: center;
 }
@@ -53,7 +53,7 @@ ul{
 }
 .favorites {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-column-gap: 60px;
     align-items: center;
 }
@@ -67,6 +67,7 @@ li {
 .city_data {
     display: grid;
     grid-template-columns: 1fr max-content max-content 1fr;
+    grid-column-gap: 5px;
     align-items: center;
 }
 .weather_data {
@@ -91,4 +92,25 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+@media screen and (max-device-width: 480px) {
+    .header {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .current_city_container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 60px;
+        align-items: center;
+    }
+
+    .favorites {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 60px;
+        align-items: center;
+    }
 }
