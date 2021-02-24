@@ -22,10 +22,16 @@ h3{
 ul{
     margin: 0;
 }
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .current_city_container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-column-gap: 4em;
+    grid-column-gap: 60px;
     align-items: center;
 }
 .current_city{
@@ -48,7 +54,7 @@ ul{
 .favorites {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-column-gap: 4em;
+    grid-column-gap: 60px;
     align-items: center;
 }
 ul {
@@ -83,5 +89,6 @@ li {
 
 .search_form {
     display: flex;
-    justify-content: end;
+    flex-direction: row;
+    justify-content: flex-end;
 }
