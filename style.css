@@ -108,7 +108,7 @@ li {
 }
 
 .weather_icon {
-    flex-shrink: 1;
+    flex-shrink: 0;
     width: 50px;
 }
 
@@ -118,7 +118,7 @@ li {
     justify-content: flex-end;
 }
 
-@media (max-device-width: 380px){
+@media (max-device-width: 480px){
     .header {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -142,5 +142,32 @@ li {
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
+    }
+
+    body {
+        margin: 0;
+        padding: 0 15px 0 15px;
+        font-size: 2em;
+    }
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    h2 {
+        font-size: 3.5em;
+        margin: 0;
+    }
+    h3 {
+        font-size: 3em;
+        margin: 0;
+    }
+
+    .current_temperature {
+        font-size: 5em;
+    }
+
+    .favorite_temperature {
+        font-size: 4em;
     }
 }
