@@ -3,24 +3,36 @@ body {
     padding: 0 15px 0 15px;
     font-size: 1em;
 }
+
 main {
-    width: 1000px;
 }
+
 .screen {
     display: flex;
     justify-content: center;
+    flex-grow: 1;
 }
 
-h2{
-    font-size: 3em;
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2.5em;
     margin: 0;
 }
-h3{
+h3 {
     font-size: 2em;
     margin: 0;
 }
-ul{
+
+ul {
     margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
 }
 
 .header {
@@ -30,7 +42,7 @@ ul{
 
 .current_city_container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 60px;
     align-items: center;
 }
@@ -49,34 +61,45 @@ ul{
 }
 
 .current_temperature {
-    font-size: 5em;
+    font-size: 4em;
 }
 .favorites {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(min-content, max-content);
     grid-column-gap: 60px;
     align-items: center;
 }
-ul {
-    padding: 0;
-}
-li {
-    list-style-type: none;
+
+.favorite-city {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.city_data {
-    display: grid;
-    grid-template-columns: 1fr max-content max-content 1fr;
-    grid-column-gap: 5px;
-    align-items: center;
+.favorite-city-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
+.city-data {
+    display: flex;
+    flex-direction: column;
+}
+
 .weather_data {
     display: flex;
     grid-column-start: 1;
     grid-column-end: 5;
     justify-content: space-between;
 }
-
+.weather_data {
+    background-color: lightgray;
+    margin: 3px 0 3px 0;
+    padding: 3px 3px 3px 3px;
+}
 .favorite_temperature {
     font-size: 3em;
 }
@@ -85,6 +108,7 @@ li {
 }
 
 .weather_icon {
+    flex-shrink: 1;
     width: 50px;
 }
 
@@ -94,7 +118,7 @@ li {
     justify-content: flex-end;
 }
 
-@media screen and (max-device-width: 480px) {
+@media (max-device-width: 480px) or (max-width: 720px) {
     .header {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

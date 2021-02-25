@@ -6,134 +6,106 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="screen">
-        <main>
-            <div class="header">
-                <h1>Погода здесь</h1>
-                <button>Обновить геолокацию</button>
-            </div>
-            <div class="current_city_container">
-                <ul class="current_city">
-                    <li class="current_city_name_container">
-                        <h2 class="current_city_name">Санкт-Петербург</h2>
-                    </li>
-                    <li class="weather_icon_container">
-                        <img class="current_city_weather_icon" src="img/Cloud.svg">
-                    </li>
-                    <li class="temperature_container">
-                        <span class="current_temperature">5&degC</span>
-                    </li>
-                </ul>
-                <ul class="city_data">
+<div class="screen">
+    <main>
+        <div class="header">
+            <h1>Погода здесь</h1>
+            <button>Обновить геолокацию</button>
+        </div>
+        <div class="current_city_container">
+            <ul class="current_city">
+                <li class="current_city_name_container">
+                    <h2 class="current_city_name">Санкт-Петербург</h2>
+                </li>
+                <li class="weather_icon_container">
+                    <img class="current_city_weather_icon" src="img/Cloud.svg">
+                </li>
+                <li class="temperature_container">
+                    <span class="current_temperature">5&degC</span>
+                </li>
+            </ul>
+            <ul class="city-data">
+                <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
+                <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
+                <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
+                <li class="weather_data"><span>Влажность</span><span>100%</span></li>
+                <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
+            </ul>
+        </div>
+        <div class="favorites-header">
+            <h2>Избранное</h2>
+            <ul class="search_form">
+                <li>
+                    <input type="search" name="q" placeholder="Добавить новый город">
+                </li>
+                <li>
+                    <button type="submit">OK</button>
+                </li>
+            </ul>
+        </div>
+        <ul class="favorites">
+            <li class="favorite-city">
+                <div class="favorite-city-header">
+                    <h3 class="favorite_city_name">Moscow</h3>
+                    <span class="favorite_temperature">5&degC</span>
+                    <img class="weather_icon" src="img/Cloud.svg">
+                    <button>+</button>
+                </div>
+                <ul class="city-data">
                     <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
                     <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
                     <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
                     <li class="weather_data"><span>Влажность</span><span>100%</span></li>
                     <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
                 </ul>
-            </div>
-            <ul class="favorites">
-                <li>
-                    <h2>Избранное</h2>
-                </li>
-                <li>
-                    <form>
-                       <ul class="search_form">
-                           <li>
-                               <input type="search" name="q" placeholder="Добавить новый город">
-                           </li>
-                           <li>
-                               <button type="submit">OK</button>
-                           </li>
-                       </ul>
-                    </form>
-                </li>
-                <li class="favorite_city">
-                    <ul class="city_data">
-                        <li class="favorite_city_name_container">
-                            <h3 class="favorite_city_name">Moscow</h3>
-                        </li>
-                        <li class="temperature_container">
-                            <span class="favorite_temperature">5&degC</span>
-                        </li>
-                        <li class="weather_icon_container">
-                            <img class="weather_icon" src="img/Cloud.svg">
-                        </li>
-                        <li class="close_button_container">
-                            <button>+</button>
-                        </li>
-                        <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
-                        <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
-                        <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
-                        <li class="weather_data"><span>Влажность</span><span>100%</span></li>
-                        <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
-                    </ul>
-                </li>
-                <li class="favorite_city">
-                    <ul class="city_data">
-                        <li class="favorite_city_name_container">
-                            <h3 class="favorite_city_name">Helsinki</h3>
-                        </li>
-                        <li class="temperature_container">
-                            <span class="favorite_temperature">5&degC</span>
-                        </li>
-                        <li class="weather_icon_container">
-                            <img class="weather_icon" src="img/Cloud.svg">
-                        </li>
-                        <li class="close_button_container">
-                            <button>+</button>
-                        </li>
-                        <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
-                        <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
-                        <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
-                        <li class="weather_data"><span>Влажность</span><span>100%</span></li>
-                        <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
-                    </ul>
-                </li>
-                <li class="favorite_city">
-                    <ul class="city_data">
-                        <li class="favorite_city_name_container">
-                            <h3 class="favorite_city_name">Krasnoyarsk</h3>
-                        </li>
-                        <li class="temperature_container">
-                            <span class="favorite_temperature">5&degC</span>
-                        </li>
-                        <li class="weather_icon_container">
-                            <img class="weather_icon" src="img/Cloud.svg">
-                        </li>
-                        <li class="close_button_container">
-                            <button>+</button>
-                        </li>
-                        <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
-                        <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
-                        <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
-                        <li class="weather_data"><span>Влажность</span><span>100%</span></li>
-                        <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
-                    </ul>
-                </li>
-                <li class="favorite_city">
-                    <ul class="city_data">
-                        <li class="favorite_city_name_container">
-                            <h3 class="favorite_city_name">Moscow</h3>
-                        </li>
-                        <li class="temperature_container">
-                            <span class="favorite_temperature">5&degC</span>
-                        </li>
-                        <li class="weather_icon_container">
-                            <img class="weather_icon" src="img/Cloud.svg">
-                        </li>
-                        <li class="close_button_container">
-                            <button>+</button>
-                        </li>
-                        <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
-                        <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
-                        <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
-                        <li class="weather_data"><span>Влажность</span><span>100%</span></li>
-                        <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
-                    </ul>
-                </li>
-            </ul>
-        </main>
-    </div>
+            </li>
+            <li class="favorite-city">
+                <div class="favorite-city-header">
+                    <h3 class="favorite_city_name">Helsinki</h3>
+                    <span class="favorite_temperature">5&degC</span>
+                    <img class="weather_icon" src="img/Cloud.svg">
+                    <button>+</button>
+                </div>
+                <ul class="city-data">
+                    <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
+                    <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
+                    <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
+                    <li class="weather_data"><span>Влажность</span><span>100%</span></li>
+                    <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
+                </ul>
+            </li>
+            <li class="favorite-city">
+                <div class="favorite-city-header">
+                    <h3 class="favorite_city_name">Krasnoyarsk</h3>
+                    <span class="favorite_temperature">5&degC</span>
+                    <img class="weather_icon" src="img/Cloud.svg">
+                    <button>+</button>
+                </div>
+                <ul class="city-data">
+                    <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
+                    <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
+                    <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
+                    <li class="weather_data"><span>Влажность</span><span>100%</span></li>
+                    <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
+                </ul>
+            </li>
+            <li class="favorite-city">
+                <div class="favorite-city-header">
+                    <h3 class="favorite_city_name">Moscow</h3>
+                    <span class="favorite_temperature">5&degC</span>
+                    <img class="weather_icon" src="img/Cloud.svg">
+                    <button>+</button>
+                </div>
+                <ul class="city-data">
+                    <li class="weather_data"><span>Ветер</span> <span>северно-южный 10м/с</span></li>
+                    <li class="weather_data"><span>Облачность</span> <span>облачно</span></li>
+                    <li class="weather_data"><span>Давление</span><span>750мм.рт.ст.</span></li>
+                    <li class="weather_data"><span>Влажность</span><span>100%</span></li>
+                    <li class="weather_data"><span>Координаты</span><span>[100, 100]</span></li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+</div>
 </body>
 </html>
