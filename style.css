@@ -118,7 +118,7 @@ li {
     justify-content: flex-end;
 }
 
-@media (max-device-width: 480px) or (max-width: 720px) {
+@media (max-device-width: 380px){
     .header {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -136,5 +136,11 @@ li {
         grid-template-columns: repeat(1, 1fr);
         grid-column-gap: 60px;
         align-items: center;
+    }
+
+    .favorite-city-header {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
     }
 }
