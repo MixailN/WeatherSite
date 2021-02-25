@@ -45,7 +45,7 @@ li {
 
 .refresh-geo {
     width: auto;
-    height: 30%;
+    padding: 1.5vw 1vw 1.5vw 1vw;
     background-color: darkgray;
     border: darkgray;
     border-radius: 10px;
@@ -57,6 +57,7 @@ li {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 60px;
     align-items: center;
+    margin-bottom: 5vw;
 }
 
 .current-city{
@@ -145,12 +146,17 @@ li {
     grid-column-start: 1;
     grid-column-end: 5;
     justify-content: space-between;
-}
-
-.weather-data {
-    background-color: lightgray;
+    background-color: darkgray;
     margin: 3px 0 3px 0;
     padding: 3px 3px 3px 3px;
+}
+
+.title {
+    color: white;
+}
+
+.description {
+    color: lightgray;
 }
 
 .favorite-temperature {
@@ -212,8 +218,6 @@ li {
         width: 15vw;
         height: 15vw;
         background: url("img/Refresh_icon.svg") no-repeat;
-        border: darkgray;
-        border-radius: 10px;
         justify-self: end;
     }
 }
@@ -256,8 +260,6 @@ li {
         width: 15vw;
         height: 15vw;
         background: url("img/Refresh_icon.svg") no-repeat;
-        border: darkgray;
-        border-radius: 10px;
         justify-self: end;
     }
 }
