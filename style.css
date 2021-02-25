@@ -6,6 +6,7 @@ body {
 
 main {
     width: 100%;
+    color: gray;
 }
 
 .screen {
@@ -88,8 +89,8 @@ li {
     width: 30vw;
     font-size: 2vw;
     border: none;
-    color: #6a8387;
-    background-color: #f1f1f1;
+    color: #789296;
+    background-color: lightgray;
     padding: 1vw;
     margin-right: 2vw;
 }
