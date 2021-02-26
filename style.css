@@ -55,7 +55,7 @@ li {
 
 .current-city-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 60px;
     align-items: center;
     margin-bottom: 5vw;
@@ -181,7 +181,7 @@ li {
     border-radius: 50%;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .header {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -223,7 +223,7 @@ li {
     }
 }
 
-@media (max-device-width: 480px) {
+@media (max-device-width: 768px) {
     .header {
         grid-template-columns: repeat(2, 1fr);
     }
