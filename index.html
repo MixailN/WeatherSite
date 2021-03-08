@@ -10,7 +10,7 @@
     <main>
         <div class="header">
             <h1>Погода здесь</h1>
-            <button class="refresh-geo"><span>Обновить геолокацию</span></button>
+            <button class="refresh-geo" onclick="getLocation()"><span>Обновить геолокацию</span></button>
         </div>
         <div class="current-city-container">
             <ul class="current-city">
@@ -103,6 +103,9 @@
                 </ul>
             </li>
         </ul>
+        <p id="script-test"></p>
+        <button onclick="getLocation()">Get coords</button>
     </main>
 </body>
+<script src="scripts/main.js"></script>
 </html>
