@@ -175,6 +175,11 @@ li {
     border-radius: 50%;
 }
 
+.loading-box {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 4vw;
