@@ -7,7 +7,7 @@ window.onload = function () {
     getLocation();
     for(let key of Object.keys(localStorage)) {
         let count = localStorage.getItem(key);
-        console.log(key + "10");
+        console.log(key + "1");
         while(count--) {
             onloadFavoriteCity(key);
         }
@@ -42,6 +42,7 @@ function onloadFavoriteCity(name) {
     xhr.onload = function() {
         if (xhr.status !== 200) {
             alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+            li.remove();
         } else {
             let answer = xhr.response;
             li.innerHTML = `
@@ -80,6 +81,7 @@ function getFavoriteCity(name){
     xhr.onload = function() {
         if (xhr.status !== 200) {
             alert(`Ошибка ${xhr.status}: ${xhr.statusText}`);
+            li.remove();
         } else {
             let answer = xhr.response;
             let count = localStorage.getItem(answer.name);
@@ -126,7 +128,7 @@ function getLocation() {
     if(navigator.geolocation) {
         geo = navigator.geolocation.getCurrentPosition(geoSuccess, geoFailure);
     } else {
-        x.innerHTML = "Your browser doesn't support geolocation";
+        alert("Your browser doesn't support geolocation");
     }
 }
 
