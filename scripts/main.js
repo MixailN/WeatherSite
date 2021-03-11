@@ -2,6 +2,7 @@ const currentCityContainer = document.getElementsByClassName("current-city-conta
 const API_KEY = "b55cb6a60addb3d56b8affed8e202b01";
 const form = document.getElementsByClassName("search-form");
 const input = document.getElementsByClassName("search-field");
+const directions = ["северный", "северно-восточный", "восточный", "юго-восточный", "южный", "юго-западный", "западный", "северо-западный"];
 
 window.onload = function () {
     getLocation();
@@ -18,6 +19,7 @@ document.forms.search.onsubmit = function() {
     let message = this.q.value;
     console.log(message);
     getFavoriteCity(message);
+    this.reset();
     return false;
 };
 
@@ -53,11 +55,11 @@ function onloadFavoriteCity(name) {
                     <button class="close-button" onclick="deleteCity(this)">x</button>
                 </div>
                 <ul class="city-data">
-                    <li class="weather-data"><span class="title">Ветер</span> <span class="description">северно-южный ${answer.wind.speed}м/с</span></li>
-                    <li class="weather-data"><span class="title">Облачность</span> <span class="description">облачно</span></li>
+                    <li class="weather-data"><span class="title">Ветер</span> <span class="description">${degreesToDirections(answer.wind.deg)} ${answer.wind.speed}м/с</span></li>
+                    <li class="weather-data"><span class="title">Облачность</span> <span class="description">${answer.clouds.all}%</span></li>
                     <li class="weather-data"><span class="title"> Давление</span><span class="description">${answer.main.pressure}гПа</span></li>
                     <li class="weather-data"><span class="title">Влажность</span><span class="description">${answer.main.humidity}%</span></li>
-                    <li class="weather-data"><span class="title">Координаты</span><span class="description">[]</span></li>
+                    <li class="weather-data"><span class="title">Координаты</span><span class="description">[${Math.round(answer.coord.lon)}, ${Math.round(answer.coord.lat)}]</span></li>
                 </ul>
             `;
         }
@@ -94,11 +96,11 @@ function getFavoriteCity(name){
                     <button class="close-button" onclick="deleteCity(this)">x</button>
                 </div>
                 <ul class="city-data">
-                    <li class="weather-data"><span class="title">Ветер</span> <span class="description">северно-южный ${answer.wind.speed}м/с</span></li>
-                    <li class="weather-data"><span class="title">Облачность</span> <span class="description">облачно</span></li>
+                    <li class="weather-data"><span class="title">Ветер</span> <span class="description">${degreesToDirections(answer.wind.deg)} ${answer.wind.speed}м/с</span></li>
+                    <li class="weather-data"><span class="title">Облачность</span> <span class="description">${answer.clouds.all}%</span></li>
                     <li class="weather-data"><span class="title"> Давление</span><span class="description">${answer.main.pressure}гПа</span></li>
                     <li class="weather-data"><span class="title">Влажность</span><span class="description">${answer.main.humidity}%</span></li>
-                    <li class="weather-data"><span class="title">Координаты</span><span class="description">[]</span></li>
+                    <li class="weather-data"><span class="title">Координаты</span><span class="description">[${Math.round(answer.coord.lon)}, ${Math.round(answer.coord.lat)}]</span></li>
                 </ul>
             `;
                 localStorage.setItem(answer.name, "1");
@@ -111,11 +113,11 @@ function getFavoriteCity(name){
                     <button class="close-button" onclick="deleteCity(this)">x</button>
                 </div>
                 <ul class="city-data">
-                    <li class="weather-data"><span class="title">Ветер</span> <span class="description">северно-южный ${answer.wind.speed}м/с</span></li>
-                    <li class="weather-data"><span class="title">Облачность</span> <span class="description">облачно</span></li>
+                    <li class="weather-data"><span class="title">Ветер</span> <span class="description">${degreesToDirections(answer.wind.deg)} ${answer.wind.speed}м/с</span></li>
+                    <li class="weather-data"><span class="title">Облачность</span> <span class="description">${answer.clouds.all}%</span></li>
                     <li class="weather-data"><span class="title"> Давление</span><span class="description">${answer.main.pressure}гПа</span></li>
                     <li class="weather-data"><span class="title">Влажность</span><span class="description">${answer.main.humidity}%</span></li>
-                    <li class="weather-data"><span class="title">Координаты</span><span class="description">[]</span></li>
+                    <li class="weather-data"><span class="title">Координаты</span><span class="description">[${Math.round(answer.coord.lon)}, ${Math.round(answer.coord.lat)}]</span></li>
                 </ul>
             `;
                 localStorage.setItem(answer.name, `${parseInt(count) + 1}`);
@@ -155,8 +157,8 @@ async function geoSuccess(position) {
                 </li>
             </ul>
             <ul class="city-data">
-                <li class="weather-data"><span class="title">Ветер</span> <span class="description">северно-южный ${answer.wind.speed}м/с</span></li>
-                <li class="weather-data"><span class="title">Облачность</span> <span class="description">облачно</span></li>
+                <li class="weather-data"><span class="title">Ветер</span> <span class="description">${degreesToDirections(answer.wind.deg)} ${answer.wind.speed}м/с</span></li>
+                <li class="weather-data"><span class="title">Облачность</span> <span class="description">${answer.clouds.all}%</span></li>
                 <li class="weather-data"><span class="title"> Давление</span><span class="description">${answer.main.pressure}гПа</span></li>
                 <li class="weather-data"><span class="title">Влажность</span><span class="description">${answer.main.humidity}%</span></li>
                 <li class="weather-data"><span class="title">Координаты</span><span class="description">[${Math.round(lat)}, ${Math.round(lon)}]</span></li>
@@ -222,8 +224,8 @@ function geoFailure() {
                 </li>
             </ul>
             <ul class="city-data">
-                <li class="weather-data"><span class="title">Ветер</span> <span class="description">северно-южный ${answer.wind.speed}м/с</span></li>
-                <li class="weather-data"><span class="title">Облачность</span> <span class="description">облачно</span></li>
+                <li class="weather-data"><span class="title">Ветер</span> <span class="description">${degreesToDirections(answer.wind.deg)} ${answer.wind.speed}м/с</span></li>
+                <li class="weather-data"><span class="title">Облачность</span> <span class="description">${answer.clouds.all}%</span></li>
                 <li class="weather-data"><span class="title"> Давление</span><span class="description">${answer.main.pressure}гПа</span></li>
                 <li class="weather-data"><span class="title">Влажность</span><span class="description">${answer.main.humidity}%</span></li>
                 <li class="weather-data"><span class="title">Координаты</span><span class="description">[${Math.round(answer.coord.lon)}, ${Math.round(answer.coord.lat)}]</span></li>
@@ -239,4 +241,11 @@ function deleteCity(element) {
     localStorage.removeItem(header.children.item(0).textContent);
     li.remove();
 
+}
+
+function degreesToDirections(degree) {
+    let index = Math.round(degree / 45);
+    console.log(index);
+    console.log(directions);
+    return directions[index];
 }
