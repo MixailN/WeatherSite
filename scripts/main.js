@@ -238,9 +238,15 @@ function geoFailure() {
 function deleteCity(element) {
     let header = element.parentElement;
     let li = header.parentElement;
-    localStorage.removeItem(header.children.item(0).textContent);
-    li.remove();
-
+    let key = header.children.item(0).textContent;
+    let count = localStorage.getItem(key);
+    if(parseInt(count) === 1) {
+        localStorage.removeItem(key);
+        li.remove();
+    } else {
+        localStorage.setItem(key, `${count - 1}`);
+        li.remove();
+    }
 }
 
 function degreesToDirections(degree) {
