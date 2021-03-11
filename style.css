@@ -124,6 +124,12 @@ li {
     justify-content: space-between;
 }
 
+.favorite-city-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .favorite-city-header {
     display: flex;
     justify-content: space-between;
@@ -159,7 +165,8 @@ li {
 }
 
 .weather-icon {
-    width: 9vw;
+    width: 8vw;
+    flex-shrink: 0;
 }
 
 .close-button {
@@ -177,6 +184,8 @@ li {
 
 .loading-box {
     display: flex;
+    grid-column-start: 1;
+    grid-column-end: 3;
     justify-content: center;
 }
 
