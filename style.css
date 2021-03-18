@@ -190,6 +190,11 @@ li {
 }
 
 @media (max-width: 768px) {
+    label {
+        display: block;
+        width: 100%;
+    }
+
     body {
         font-size: 4vw;
     }
